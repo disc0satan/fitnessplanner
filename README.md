@@ -16,12 +16,11 @@ A high-performance, responsive React application that generates personalized, AI
 <img width="399" height="593" alt="Screenshot 2026-03-08 at 7 16 04 PM" src="https://github.com/user-attachments/assets/a1d7b111-1f9d-47af-b395-c90fab751cdc" />
 <img width="399" height="593" alt="Screenshot 2026-03-08 at 7 16 11 PM" src="https://github.com/user-attachments/assets/10c6a05e-b428-4f45-9a0f-3da76df94767" />
 <img width="399" height="593" alt="Screenshot 2026-03-08 at 7 16 14 PM" src="https://github.com/user-attachments/assets/4eff00fe-9e34-4911-a091-fb6f2d023a2f" />
-<img width="369" height="581" alt="Screenshot 2026-03-08 at 7 42 07 PM" src="https://github.com/user-attachments/assets/211bbd06-af67-4db8-ae97-acdc197a9f3b" />
-<img width="369" height="581" alt="Screenshot 2026-03-08 at 7 42 11 PM" src="https://github.com/user-attachments/assets/92612a41-c11e-4586-b814-997f896a0400" />
-<img width="369" height="581" alt="Screenshot 2026-03-08 at 7 42 16 PM" src="https://github.com/user-attachments/assets/37bee87b-312c-4162-b6b1-7bbbc1a84db4" />
-<img width="369" height="581" alt="Screenshot 2026-03-08 at 7 42 21 PM" src="https://github.com/user-attachments/assets/8c7c5ba3-9e45-4252-926e-71a6cf4c4f32" />
 <img width="399" height="593" alt="Screenshot 2026-03-08 at 7 16 22 PM" src="https://github.com/user-attachments/assets/c0f9a8fc-75c1-47f1-8734-e530f75fcb88" />
-
+<img width="399" height="593" alt="Screenshot 2026-03-08 at 9 27 25 PM" src="https://github.com/user-attachments/assets/f47e86dd-9c8a-4400-a7df-7ae7df3b5b3b" />
+<img width="399" height="593" alt="Screenshot 2026-03-08 at 9 27 31 PM" src="https://github.com/user-attachments/assets/7c928cea-b04a-44ff-b0fe-44c49d7c7363" />
+<img width="399" height="593" alt="Screenshot 2026-03-08 at 9 27 36 PM" src="https://github.com/user-attachments/assets/9015a486-69dd-47bc-b665-7c74ffead6cd" />
+<img width="399" height="593" alt="Screenshot 2026-03-08 at 9 28 02 PM" src="https://github.com/user-attachments/assets/ac9ca5d6-85ea-442c-a54c-3601f36f56ad" />
 
 
 ## Key Features
