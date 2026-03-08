@@ -39,3 +39,109 @@ Users provide details to receive a highly customized 7-day routine:
 * **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
 
 ---
+
+## Technical Architecture
+* **Frontend Framework**: React.js (Component-based architecture).
+* **Build Tool**: Vite (Optimized for fast local development and production bundling).
+* **Styling**: SCSS Modules utilizing a centralized Design Token system (CSS Variables) for a consistent dark-mode theme.
+* **AI Integration**: OpenRouter API utilizing OpenAI-compatible chat completions.
+* **Deployment**: GitHub Pages with automated `gh-pages` CI/CD-lite scripting.
+
+
+* **Structured AI Output (JSON Contract):**
+To ensure the UI renders reliably without crashing, the AI is instructed via a strict system prompt to always return data in this exact JSON schema:
+```
+JSON
+
+{
+  "weekly_summary": {
+    "total_days": 7,
+    "rest_days": number,
+    "total_kcal": number
+  },
+  "nutrition_tip": "string (one-sentence elite performance tip)",
+  "recovery_tip": "string (one-sentence recovery protocol tip)",
+  "days": [
+    {
+      "day": "DAY 01",
+      "type": "STRENGTH | CARDIO | RECOVERY",
+      "title": "string",
+      "duration_min": number,
+      "calories_est": number,
+      "intensity": "LOW | MODERATE | HIGH | ELITE",
+      "exercises": [
+        { "name": "string", "sets": number, "reps": "string/number" }
+      ],
+      "protocol": "string (brief instruction)"
+    }
+  ]
+}
+```
+---
+
+## Technical Challenges & Solutions
+* **1. Handling Unpredictable AI JSON Formatting**:Free-tier LLMs occasionally append conversational text or invalid trailing commas to the JSON, which caused JSON.parse() to throw syntax errors and crash the UI.
+
+Solution: Implemented a custom cleanAndParseJSON utility that strips trailing commas using Regex and isolates the JSON block before parsing, ensuring the React state always receives a valid object.
+
+* **2.AI Limitations & Reality Check**:
+* Integrating external LLMs comes with real-world constraint. Rate Limiting (429 Errors):
+* The application utilizes free-tier models via OpenRouter. During peak global traffic hours, the servers may return a "busy" response.
+* Privacy Requirements: Free models require specific "Data Training" and "Prompt Publishing" settings to be enabled on OpenRouter; otherwise, they return a 401 Unauthorized error.
+* Response Variance: AI-generated workouts are dynamic fitness suggestions and may vary between generation runs.
+
+---
+
+## Technical ArchitectureInstallation & Running Locally
+To experience the full AI generation capabilities without rate-limiting interruptions, you can run this project locally:
+
+* **1. Clone the repository**
+```
+Bash
+
+git clone https://github.com/disc0satan/fitnessplanner.git
+cd fitnessplanner
+```
+* **2. Install dependencies**
+```
+Bash
+
+npm install
+```
+* **3. Configure Environment Variables**
+Create a .env file in the root directory (same folder as package.json):
+```
+Code snippet
+
+VITE_OPENROUTER_API_KEY=your_openrouter_api_key_here
+```
+(Note: Ensure your OpenRouter key has free endpoints enabled in your privacy settings).
+
+* **4. Start the development server**
+
+```
+Bash
+
+npm run dev
+```
+The application will be running at http://localhost:5173.
+
+---
+
+##Quality Assurance & Testing
+
+* ** Multiple Responsive Breakpoints Tested**
+
+* **Error Handling**
+Implemented safeguards against malformed AI JSON responses and API timeout/rate-limit failures to guarantee the app does not crash.
+
+---
+
+## License
+* This project is licensed under the MIT License provided for educational and evaluation purposes.
+---
+
+## Acknowledgements
+* OpenRouter for providing flexible API access to leading LLMs.
+* UI inspiration and layout structures adapted from provided Figma design mockups.
+* Built utilizing the React and Vite open-source ecosystems.
