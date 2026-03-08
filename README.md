@@ -45,7 +45,7 @@ Users provide details to receive a highly customized 7-day routine:
 * **Build Tool**: Vite (Optimized for fast local development and production bundling).
 * **Styling**: SCSS Modules utilizing a centralized Design Token system (CSS Variables) for a consistent dark-mode theme.
 * **AI Integration**: OpenRouter API utilizing OpenAI-compatible chat completions.
-* **Deployment**: GitHub Pages with automated `gh-pages` CI/CD-lite scripting.
+* **Deployment**: Deployed Using Vercel
 
 
 * **Structured AI Output (JSON Contract):**
@@ -80,7 +80,7 @@ JSON
 ---
 
 ## ChatGPT Conversation Link
-
+ https://chatgpt.com/share/69ad8d92-2dc4-800a-9ddc-9b6a0a38cae6
 ---
 
 ## Technical Challenges & Solutions
@@ -132,7 +132,7 @@ The application will be running at http://localhost:5173.
 
 ---
 
-##Quality Assurance & Testing
+## Quality Assurance & Testing
 
 * ** Multiple Responsive Breakpoints Tested**
 
