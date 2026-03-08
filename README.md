@@ -1,4 +1,4 @@
-# AI Fitness Planner
+# Elite Fitness AI
 
 A high-performance, responsive React application that generates personalized, AI-driven weekly fitness plans. Users input basic biometric data and fitness goals, and the application generates a structured, card-based workout routine using a cloud-based Large Language Model (LLM).
 
