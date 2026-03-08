@@ -8,7 +8,7 @@ const MODELS = [
 ];
 
 
-const API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY || "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";
+const API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY;
 
 export const fetchFitnessPlan = async (formData, attempt = 0) => {
   try {
