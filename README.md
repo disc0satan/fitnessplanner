@@ -79,6 +79,10 @@ JSON
 ```
 ---
 
+## ChatGPT Conversation Link
+
+---
+
 ## Technical Challenges & Solutions
 * **1. Handling Unpredictable AI JSON Formatting**:Free-tier LLMs occasionally append conversational text or invalid trailing commas to the JSON, which caused JSON.parse() to throw syntax errors and crash the UI.
 
