@@ -1,0 +1,264 @@
+@import "../styles/variables.scss";
+
+.bodyWrapper {
+  background-color: $bg-dark;
+  width: 100%;
+  min-height: 2199px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  max-width: 1440px; 
+  top: 0;
+  display: flex;
+  padding: 52px 60px;
+  z-index: 10;
+  
+  .logoText {
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: $white;
+  }
+}
+
+.mainContainer {
+  width: 100%;
+  max-width: 896px; 
+  padding: 200px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  box-sizing: border-box;
+}
+
+.heroSection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .iconOverlay {
+    width: 64px;
+    height: 50px;
+    background: #0D2730;
+    border: 1px solid #095A6E;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 46px;
+    box-shadow: 0px 0px 5.6px rgba(0, 210, 255, 0.4);
+    color: $primary-cyan;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -2.4px;
+    color: $text-light;
+    margin: 0 0 16px 0;
+    span { color: $primary-cyan; }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    color: $text-muted;
+    max-width: 448px;
+    margin: 0;
+  }
+}
+
+.statsCard {
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .cardHeading {
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 2.8px;
+    color: $primary-cyan;
+    margin: 0;
+  }
+}
+
+// Grids
+.statsGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.tierGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.objGrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.loadGrid { display: flex; gap: 12px; }
+
+.inputGroup {
+  position: relative;
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  
+  label {
+    position: absolute;
+    top: -0.5px;
+    left: 4px;
+    font-weight: 900;
+    font-size: 10px;
+    color: $text-label;
+    letter-spacing: 1px;
+  }
+
+  input {
+    position: absolute;
+    top: 27px;
+    width: 100%;
+    height: 58px;
+    background: $input-bg;
+    border: 1px solid $input-border;
+    border-radius: 12px;
+    padding: 0 21px;
+    color: $text-label; // Matches screenshot gray
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    box-sizing: border-box;
+    &:focus { border-color: $primary-cyan; }
+  }
+}
+
+.genderToggle { display: flex; gap: 8px; margin-top: 27px; height: 58px; }
+
+// ALL BUTTON STYLES (Gender, Tiers, Objectives, Load)
+.pillBtn, .tierCard, .objCard {
+  background: $input-bg;
+  border: 1px solid $input-border;
+  border-radius: 12px;
+  color: $text-light; // Unselected light gray text
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+  
+  // Magic active class ensuring text and stroke turn white
+  &.active {
+    background: $primary-cyan;
+    color: $white; 
+    border-color: $primary-cyan;
+    box-shadow: 0px 0px 5px rgba(0, 210, 255, 0.4);
+  }
+}
+
+.pillBtn { 
+  flex: 1; 
+  font-size: 12px; 
+  gap: 8px;
+  .svgIcon {
+    width: 14px;
+    height: 14px;
+    color: $primary-cyan; // Unselected stroke color
+  }
+  &.active .svgIcon { color: $white; } // Active stroke color
+}
+
+.tierCard { 
+  height: 105px; 
+  flex-direction: column; 
+  border-radius: 16px;
+  h3 { font-size: 14px; letter-spacing: 1.4px; margin: 0; }
+  .tierSub { font-size: 10px; font-weight: 700; color: $text-label; letter-spacing: -0.4px; margin-top: 4px; }
+  &.active .tierSub { color: $white; } // Fixes subtext color on active state
+}
+
+.objCard { 
+  height: 117px; 
+  flex-direction: column;
+  font-size: 10px; 
+  letter-spacing: 1px;
+  border-radius: 16px;
+  gap: 16px;
+  .objIconWrapper {
+    width: 16px;
+    height: 16px;
+    color: $primary-cyan; // SVG inherits this currentColor
+  }
+  &.active .objIconWrapper { color: $white; }
+}
+
+.loadBtn { height: 80px; font-size: 20px; border-radius: 16px; min-width: 60px; }
+
+.loadHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .loadDisplay {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    strong { font-size: 30px; color: $primary-cyan; font-weight: 900; line-height: 36px; }
+    span { font-size: 12px; color: $text-label; font-weight: 900; }
+  }
+}
+
+.textArea {
+  width: 100%;
+  height: 140px;
+  background: $input-bg;
+  border: 1px solid $input-border;
+  border-radius: 16px;
+  padding: 24px;
+  color: $text-label;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  &::placeholder { color: $text-label; }
+  &:focus { border-color: $primary-cyan; }
+}
+
+.submitBtn {
+  width: 100%;
+  height: 76px;
+  background: $primary-cyan;
+  border-radius: 16px;
+  border: none;
+  color: $white;
+  font-weight: 900;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  transition: 0.2s;
+  &:hover { opacity: 0.9; box-shadow: 0px 0px 15px rgba(0, 210, 255, 0.4); }
+}
+
+// --- MOBILE RESPONSIVE ---
+@media (max-width: 896px) {
+  .mainContainer { padding: 160px 16px 64px; }
+  .header { padding: 52px 16px; }
+  .statsCard { padding: 16px; }
+  .statsGrid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .tierGrid { grid-template-columns: 1fr; gap: 16px; }
+  .objGrid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .loadGrid { flex-wrap: wrap; gap: 16px; .loadBtn { flex: 1 1 30%; } }
+  .textArea { height: 160px; }
+}

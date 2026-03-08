@@ -1,0 +1,52 @@
+@import './styles/variables.scss';
+
+.app-container {
+  min-height: 100vh;
+  background-color: $bg-dark; // Matches your provided hex
+  display: flex;
+  flex-direction: column;
+}
+
+.status-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $primary-cyan; // Changed from $accent-cyan to fix the error
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid $card-border;
+    border-top-color: $primary-cyan;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.error-state {
+  color: $white;
+  background: $card-bg;
+  padding: 2rem;
+  border-radius: $radius-main;
+  border: 1px solid $card-border;
+  
+  button {
+    margin-top: 1rem;
+    background: $primary-cyan;
+    color: $bg-dark;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: $radius-sm;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

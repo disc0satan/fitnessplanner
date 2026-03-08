@@ -1,0 +1,257 @@
+@import "../styles/variables.scss";
+
+.mainContainer {
+  background: $bg-dark;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 24px 86px;
+  font-family: 'Inter', sans-serif;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 976px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 1. HERO & TIPS */
+.heroSection {
+  background: $card-bg;
+  border: 1px solid $border-shade;
+  border-radius: 40px;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .heroBadge {
+    background: $cyan-muted;
+    border: 1px solid $cyan-border;
+    border-radius: 16px;
+    padding: 12px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    color: $primary-cyan;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    @media (max-width: 768px) { font-size: 28px; }
+  }
+}
+
+.summaryGrid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .summaryCard {
+    background: $inner-bg;
+    border: 1px solid $inner-border;
+    border-radius: 24px;
+    width: 128px;
+    height: 116px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 768px) { width: 100%; max-width: 338px; }
+
+    strong { color: white; font-size: 30px; font-weight: 900; margin: 8px 0 4px; }
+    label { color: $primary-cyan; font-size: 9px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; }
+  }
+}
+
+.tipsGrid {
+  display: flex;
+  gap: 24px;
+  @media (max-width: 768px) { flex-direction: column; }
+
+  .tipCard {
+    flex: 1;
+    background: $card-bg;
+    border: 1px solid $border-shade;
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: $text-light;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 300;
+
+    .tipIcon { background: $cyan-muted; color: $primary-cyan; padding: 12px; border-radius: 12px; }
+  }
+}
+
+/* 2. SHARED DAY CARD STYLES */
+.daysList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Spacing between collapsed cards */
+}
+
+.dayIcon {
+  background: $cyan-muted;
+  border: 1px solid $cyan-border;
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $primary-cyan;
+  flex-shrink: 0;
+}
+
+.tagGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+
+  .dayNum { color: $text-slate; font-size: 10px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; }
+  .typeBadge { color: $primary-cyan; background: $cyan-muted; border: 1px solid $cyan-border; padding: 4px 12px; border-radius: 999px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+  .typeBadgeCollapsed { color: $primary-cyan; border: 1px solid $cyan-border; padding: 2px 8px; border-radius: 6px; font-size: 8px; font-weight: 700; text-transform: uppercase; }
+}
+
+/* 3. COLLAPSED STATE */
+.dayCardCollapsed {
+  background: $inner-bg;
+  border: 1px solid $inner-border;
+  border-radius: 16px;
+  height: 90px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+
+  &:hover { border-color: $cyan-border; }
+
+  .collapsedLeft {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .collapsedInfo h3 { color: white; font-size: 16px; font-weight: 700; letter-spacing: 0.4px; margin: 0; }
+  }
+
+  .collapsedRight {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .durationBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      strong { color: white; font-size: 16px; font-weight: 700; line-height: 24px; }
+      label { color: $text-slate; font-size: 8px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; }
+    }
+  }
+}
+
+/* 4. EXPANDED STATE */
+.dayCardExpanded {
+  background: $card-bg;
+  border: 1px solid $border-shade;
+  border-radius: 32px;
+  padding: 32px;
+  @media (max-width: 768px) { padding: 24px 16px; }
+
+  .dayHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    cursor: pointer;
+
+    .dayTitleGroup { display: flex; gap: 24px; }
+    h2 { color: white; font-size: 24px; font-weight: 700; letter-spacing: 3.6px; text-transform: uppercase; margin: 0; }
+    
+    .expandIcon { background: $inner-bg; border: 1px solid $inner-border; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: $primary-cyan; }
+  }
+}
+
+/* METRICS & EXERCISES */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+  @media (max-width: 768px) { grid-template-columns: repeat(2, 1fr); }
+
+  .metricBox {
+    background: $inner-bg;
+    border: 1px solid $inner-border;
+    border-radius: 16px;
+    height: 123px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    strong { color: white; font-size: 24px; font-weight: 700; margin: 12px 0 4px; }
+    label { color: $text-slate; font-size: 9px; font-weight: 700; letter-spacing: 0.9px; text-transform: uppercase; }
+  }
+}
+
+.exerciseList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  .exerciseRow {
+    background: $inner-bg;
+    border: 1px solid $inner-border;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .exLeft { display: flex; align-items: center; gap: 16px; }
+    .exName { color: $text-light; font-weight: 500; font-size: 14px; }
+    .exRight { color: $primary-cyan; background: $cyan-muted; border: 1px solid $cyan-border; padding: 6px 16px; border-radius: 8px; font-size: 10px; font-weight: 400; }
+  }
+}
+
+.protocolBox {
+  background: $inner-bg;
+  border: 1px solid $inner-border;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: $primary-cyan;
+  p { font-size: 12px; font-weight: 300; line-height: 16px; }
+}
+
+.backBtn {
+  background: transparent;
+  border: 1px solid $cyan-border;
+  color: $primary-cyan;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 16px;
+  transition: 0.2s;
+  &:hover { background: $cyan-muted; }
+}
