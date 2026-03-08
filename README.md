@@ -2,7 +2,7 @@
 
 A high-performance, responsive React application that generates personalized, AI-driven weekly fitness plans. Users input basic biometric data and fitness goals, and the application generates a structured, card-based workout routine using a cloud-based Large Language Model (LLM).
 
-* **Live Demo**: [(https://fitnessplanner-theta.vercel.app/)](https://fitnessplanner-theta.vercel.app/)
+* **Live Demo**: https://fitnessplanner-theta.vercel.app/
 
 ---
 
@@ -44,8 +44,11 @@ Users provide details to receive a highly customized 7-day routine:
 * **Frontend Framework**: React.js (Component-based architecture).
 * **Build Tool**: Vite (Optimized for fast local development and production bundling).
 * **Styling**: SCSS Modules utilizing a centralized Design Token system (CSS Variables) for a consistent dark-mode theme.
-* **AI Integration**: OpenRouter API utilizing OpenAI-compatible chat completions.
-* **Deployment**: Deployed Using Vercel
+* **AI Integration**: Multi-model architecture via the OpenRouter API, utilizing OpenAI-compatible chat completions. 
+    * google/gemini-2.0-flash-lite-preview-02-05:free
+    * openai/gpt-3.5-turbo
+    * mistralai/mistral-7b-instruct:free
+* **Deployment**: Hosted on Vercel with automated CI/CD integration for high-performance delivery.
 
 
 * **Structured AI Output (JSON Contract):**
